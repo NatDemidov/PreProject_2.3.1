@@ -2,7 +2,6 @@ package web.model;
 
 
 import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 @Component
@@ -19,6 +18,7 @@ public class User {
     private String lastName;
     @Column(name = "email")
     private String email;
+
     public User() {
 
     }
