@@ -11,18 +11,14 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import web.model.User;
-
 import javax.sql.DataSource;
 import java.util.Properties;
-
 
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScan(value = "web")
 public class DBConfig {
-
     @Autowired
     private Environment env;
 
@@ -37,6 +33,7 @@ public class DBConfig {
 
         return dataSource;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
@@ -52,6 +49,7 @@ public class DBConfig {
 
         return entityManager;
     }
+
     @Bean
     public JpaTransactionManager getTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
